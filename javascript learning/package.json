@@ -1,0 +1,21 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "learning javascript",
+  "main": "index.js",
+  "scripts": {
+    "devserver": "live-server"
+  },
+  "author": "__hhaai_",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "none"
+  ],
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
