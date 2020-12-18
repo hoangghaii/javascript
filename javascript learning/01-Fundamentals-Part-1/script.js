@@ -1,33 +1,33 @@
-////////////////////////////////////
-// Linking a JavaScript File
-let js = "amazing";
-console.log(40 + 8 + 23 - 10);
+// ////////////////////////////////////
+// // Linking a JavaScript File
+// let js = "amazing";
+// console.log(40 + 8 + 23 - 10);
 
-////////////////////////////////////
-// Values and Variables
-console.log("Jonas");
-console.log(23);
+// ////////////////////////////////////
+// // Values and Variables
+// console.log("Jonas");
+// console.log(23);
 
-let firstName = "Matilda";
+// let firstName = "Matilda";
 
-console.log(firstName);
-console.log(firstName);
-console.log(firstName);
+// console.log(firstName);
+// console.log(firstName);
+// console.log(firstName);
 
-// Variable name conventions
-let jonas_matilda = "JM";
-let $function = 27;
+// // Variable name conventions
+// let jonas_matilda = "JM";
+// let $function = 27;
 
-let person = "jonas";
-let PI = 3.1415;
+// let person = "jonas";
+// let PI = 3.1415;
 
-let myFirstJob = "Coder";
-let myCurrentJob = "Teacher";
+// let myFirstJob = "Coder";
+// let myCurrentJob = "Teacher";
 
-let job1 = "programmer";
-let job2 = "teacher";
+// let job1 = "programmer";
+// let job2 = "teacher";
 
-console.log(myFirstJob);
+// console.log(myFirstJob);
 
 // ////////////////////////////////////
 // // Data Types
@@ -36,8 +36,8 @@ console.log(myFirstJob);
 
 // // console.log(typeof true);
 // console.log(typeof javascriptIsFun);
-// // console.log(typeof 23);
-// // console.log(typeof 'Jonas');
+// console.log(typeof 23);
+// console.log(typeof "Jonas");
 
 // javascriptIsFun = "YES!";
 // console.log(typeof javascriptIsFun);
@@ -55,6 +55,8 @@ console.log(myFirstJob);
 // // let, const and var
 // let age = 30;
 // age = 31;
+// console.log(age);
+// console.log(typeof age);
 
 // const birthYear = 1991;
 // // birthYear = 1990;
@@ -66,7 +68,7 @@ console.log(myFirstJob);
 // lastName = "Schmedtmann";
 // console.log(lastName);
 
-// ////////////////////////////////////
+////////////////////////////////////
 // // Basic Operators
 // // Math operators
 // const now = 2037;
@@ -77,9 +79,9 @@ console.log(myFirstJob);
 // console.log(ageJonas * 2, ageJonas / 10, 2 ** 3);
 // // 2 ** 3 means 2 to the power of 3 = 2 * 2 * 2
 
-// // const firstName = "Jonas";
-// // const lastName = "Schmedtmann";
-// // console.log(firstName + " " + lastName);
+// const firstName = "Jonas";
+// const lastName = "Schmedtmann";
+// console.log(firstName + " " + lastName);
 
 // // Assignment operators
 // let x = 10 + 5; // 15
@@ -95,11 +97,12 @@ console.log(myFirstJob);
 // console.log(ageSarah >= 18);
 
 // const isFullAge = ageSarah >= 18;
+// console.log(isFullAge);
 
 // console.log(now - 1991 > now - 2018);
 
-// ////////////////////////////////////
-// // Operator Precedence
+////////////////////////////////////
+// Operator Precedence
 // const now = 2037;
 // const ageJonas = now - 1991;
 // const ageSarah = now - 2018;
@@ -129,31 +132,62 @@ TEST DATA 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1
 GOOD LUCK 😀
 */
 
+// const weightMark1 = 78;
+// const heightMark1 = 1.69;
+// const weightJohn1 = 92;
+// const heightJohn1 = 1.95;
+
+// const weightMark2 = 95;
+// const heightMark2 = 1.88;
+// const weightJohn2 = 85;
+// const heightJohn2 = 1.76;
+
+// const BMI_Mark = (weightMark1 / heightMark1 ** 2).toFixed(1);
+// console.log("BMI_Mark: ", BMI_Mark);
+
+// const BMI_John = (weightJohn1 / heightJohn1 ** 2).toFixed(1);
+// console.log("BMI_John: ", BMI_John);
+
+// const markHigherBMI = BMI_Mark > BMI_John;
+// console.log("markHigherBMI: ", markHigherBMI);
+
+// BMI_Mark > BMI_John
+// 	? console.log("Mark's BMI is higher than John's!")
+// 	: console.log("John's BMI is higher than Mark's!");
+
+// BMI_Mark > BMI_John
+// 	? console.log(
+// 			`Mark's BMI (${BMI_Mark}) is higher than John's ( ${BMI_John})!`
+// 	  )
+// 	: console.log(
+// 			`John's BMI (${BMI_Mark}) is higher than Mark's ( ${BMI_John})!`
+// 	  );
+
 // const massMark = 78;
 // const heightMark = 1.69;
 // const massJohn = 92;
 // const heightJohn = 1.95;
 
-/*
-const massMark = 95;
-const heightMark = 1.88;
-const massJohn = 85;
-const heightJohn = 1.76;
+// const massMark = 95;
+// const heightMark = 1.88;
+// const massJohn = 85;
+// const heightJohn = 1.76;
 
-const BMIMark = massMark / heightMark ** 2;
-const BMIJohn = massJohn / (heightJohn * heightJohn);
-const markHigherBMI = BMIMark > BMIJohn;
+// const BMIMark = massMark / heightMark ** 2;
+// const BMIJohn = massJohn / (heightJohn * heightJohn);
+// const markHigherBMI = BMIMark > BMIJohn;
 
-console.log(BMIMark, BMIJohn, markHigherBMI);
+// console.log(BMIMark, BMIJohn, markHigherBMI);
 
 ////////////////////////////////////
 // Strings and Template Literals
-const firstName = 'Jonas';
-const job = 'teacher';
+const firstName = "Jonas";
+const job = "teacher";
 const birthYear = 1991;
 const year = 2037;
 
-const jonas = "I'm " + firstName + ', a ' + (year - birthYear) + ' year old ' + job + '!';
+const jonas =
+	"I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + "!";
 console.log(jonas);
 
 const jonasNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
@@ -161,36 +195,34 @@ console.log(jonasNew);
 
 console.log(`Just a regular string...`);
 
-console.log('String with \n\
+console.log("String with \n\
 multiple \n\
-lines');
+lines");
 
 console.log(`String
 multiple
 lines`);
 
-
 ////////////////////////////////////
 // Taking Decisions: if / else Statements
-const age = 15;
+// const age = 15;
 
-if (age >= 18) {
-  console.log('Sarah can start driving license 🚗');
-} else {
-  const yearsLeft = 18 - age;
-  console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`);
-}
+// if (age >= 18) {
+//   console.log('Sarah can start driving license 🚗');
+// } else {
+//   const yearsLeft = 18 - age;
+//   console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`);
+// }
 
-const birthYear = 2012;
+// const birthYear = 2012;
 
-let century;
-if (birthYear <= 2000) {
-  century = 20;
-} else {
-  century = 21;
-}
-console.log(century);
-*/
+// let century;
+// if (birthYear <= 2000) {
+//   century = 20;
+// } else {
+//   century = 21;
+// }
+// console.log(century);
 
 ////////////////////////////////////
 // Coding Challenge #2
