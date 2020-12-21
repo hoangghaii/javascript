@@ -4,7 +4,7 @@
   "description": "learning javascript",
   "main": "index.js",
   "scripts": {
-    "devserver": "live-server"
+    "start": "live-server"
   },
   "author": "__hhaai_",
   "license": "ISC",
