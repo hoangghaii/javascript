@@ -243,3 +243,20 @@ const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 const total = [tips[0] + bills[0], tips[1] + bills[1], tips[2] + bills[2]];
 
 console.log(total);
+
+// Introduction to Objects
+const jonasArray = [
+	"Jonas",
+	"Schmedtmann",
+	2037 - 1991,
+	"teacher",
+	["Michael", "Peter", "Steven"],
+];
+
+const jonas = {
+	firstName: "Jonas",
+	lastName: "Schmedtmann",
+	age: 2037 - 1991,
+	job: "teacher",
+	friends: ["Michael", "Peter", "Steven"],
+};
