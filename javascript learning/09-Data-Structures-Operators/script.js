@@ -1,5 +1,23 @@
 "use strict";
 
+const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+console.log(weekdays[3]);
+
+const openingHours = {
+	[weekdays[3]]: {
+		open: 12,
+		close: 22,
+	},
+	[weekdays[4]]: {
+		open: 11,
+		close: 23,
+	},
+	[weekdays[5]]: {
+		open: 0, // Open 24 hours
+		close: 24,
+	},
+};
+
 const restaurant = {
 	name: "Classico Italiano",
 	location: "Via Angelo Tavanti 23, Firenze, Italy",
@@ -7,26 +25,14 @@ const restaurant = {
 	starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
 	mainMenu: ["Pizza", "Pasta", "Risotto"],
 
-	openingHours: {
-		thu: {
-			open: 12,
-			close: 22,
-		},
-		fri: {
-			open: 11,
-			close: 23,
-		},
-		sat: {
-			open: 0, // Open 24 hours
-			close: 24,
-		},
-	},
+	// ES6 enhanced object literals
+	openingHours,
 
-	order: function (starterIndex, mainIndex) {
+	order(starterIndex, mainIndex) {
 		return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
 	},
 
-	orderDelivery: function ({
+	orderDelivery({
 		time = "20:00",
 		address,
 		mainIndex = 0,
@@ -37,7 +43,7 @@ const restaurant = {
 		);
 	},
 
-	orderPasta: function (ing1, ing2, ing3) {
+	orderPasta(ing1, ing2, ing3) {
 		console.log(`Here is your pasta with ${ing1}, ${ing2} and ${ing3}`);
 	},
 
@@ -47,16 +53,16 @@ const restaurant = {
 	},
 };
 
-// The for-of Loop
-const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// // The for-of Loop
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 
-for (const item of menu) console.log(item);
+// for (const item of menu) console.log(item);
 
-for (const [i, el] of menu.entries()) {
-	console.log(`${i + 1}: ${el}`);
-}
+// for (const [i, el] of menu.entries()) {
+// 	console.log(`${i + 1}: ${el}`);
+// }
 
-console.log(...menu.entries());
+// console.log(...menu.entries());
 
 // // The Nullish Coalescing Operator
 // restaurant.numGuests = 0;
