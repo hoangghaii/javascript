@@ -1,7 +1,7 @@
 "use strict";
 
 const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
-console.log(weekdays[3]);
+// console.log(weekdays[3]);
 
 const openingHours = {
 	[weekdays[3]]: {
@@ -53,6 +53,68 @@ const restaurant = {
 	},
 };
 
+// // Looping Objects: Object Keys, Values, and Entries
+
+// // Property NAMES
+// const properties = Object.keys(openingHours);
+// console.log(properties);
+
+// let openStr = `We are open on ${properties.length} days: `;
+
+// for (const day of properties) {
+// 	openStr += `${day} `;
+// }
+
+// console.log(openStr);
+
+// // Property VALUES
+// const values = Object.values(openingHours);
+// console.log(values);
+
+// // Entrie object
+// const entries = Object.entries(openingHours);
+// console.log(entries);
+
+// // [key, value]
+// for (const [key, value] of entries) {
+// 	console.log(
+// 		`On ${key}, we open at ${value.open} and close at ${value.close}`
+// 	);
+// }
+
+// for (const [key, { open, close }] of entries) {
+// 	console.log(`On ${key}, we open at ${open} and close at ${close}`);
+// }
+
+// // Optional Chaining
+// if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
+// if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri.open);
+
+// // WITH optional chaining
+// console.log(restaurant.openingHours.mon?.open);
+// console.log(restaurant.openingHours?.fri?.open);
+
+// // Example
+// const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+// for (const day of days) {
+// 	// console.log(day);
+// 	const open = restaurant.openingHours[day]?.open ?? "closed";
+// 	console.log(`On ${day}, we open at ${open}`);
+// }
+
+// // Methods
+// console.log(restaurant.order?.(0, 1) ?? "Methods does not exits");
+// console.log(restaurant.orderRisotto?.(0, 1) ?? "Methods does not exits");
+
+// // Arrays
+// const users = [{ name: "Jonas", email: "hello@jonas.io" }];
+// console.log(users[0]?.name ?? "User array empty!");
+
+// // <==> (tuong duong)
+// // users.length > 0
+// // 	? console.log(users[0].name)
+// // 	: console.log("User array empty!");
+
 // // The for-of Loop
 // const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 
@@ -62,7 +124,7 @@ const restaurant = {
 // 	console.log(`${i + 1}: ${el}`);
 // }
 
-// console.log(...menu.entries());
+// console.log(menu.entries());
 
 // // The Nullish Coalescing Operator
 // restaurant.numGuests = 0;
@@ -334,3 +396,60 @@ const game = {
 
 // team1 < team2 && console.log("Team 1 is more likely to win");
 // team2 < team1 && console.log("Team 2 is more likely to win");
+
+// Coding Challenge #2
+/* 
+Let's continue with our football betting app!
+
+1. Loop over the game.scored array and print each player name to the console,
+along with the goal number (Example: "Goal 1: Lewandowski")
+2. Use a loop to calculate the average odd and log it to the console 
+(We already studied how to calculate averages, you can go check if you don't remember)
+3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+      Odd of victory Bayern Munich: 1.33
+      Odd of draw: 3.25
+      Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them (except for "draw"). 
+HINT: Note how the odds and the game objects have the same property names 😉
+
+BONUS: Create an object called 'scorers' which contains the names of the players 
+who scored as properties, and the number of goals as the value. 
+In this game, it will look like this:
+      {
+        Gnarby: 1,
+        Hummels: 1,
+        Lewandowski: 2
+      }
+
+GOOD LUCK 😀
+*/
+
+for (const player of game.scored) {
+	console.log(player);
+}
+
+console.log("==============================");
+
+const odds = Object.entries(game.odds);
+let x = 0;
+for (const [key, value] of odds) {
+	x += value;
+}
+console.log(x / odds.length);
+
+console.log("==============================");
+
+for (const [key, value] of odds) {
+	const str = key == "x" ? "draw" : `victory ${game[key]}`;
+	console.log(`Odd of ${str}: ${value}`);
+}
+
+console.log("==============================");
+
+const scorers = {};
+let tmp = 1;
+
+for (const player of game.scored) {
+	scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+console.log(scorers);
