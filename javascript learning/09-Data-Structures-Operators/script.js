@@ -53,6 +53,72 @@ const restaurant = {
 	},
 };
 
+// // Sets
+// const orderSet = new Set([
+// 	"Pasta",
+// 	"Pizza",
+// 	"Pizza",
+// 	"Risotto",
+// 	"Pasta",
+// 	"Pizza",
+// ]);
+// console.log(orderSet);
+// console.log(typeof orderSet);
+
+// console.log(new Set("Jonas"));
+
+// console.log(orderSet.size);
+// console.log(orderSet.has("Pizza"));
+// console.log(orderSet.has("Bread"));
+// orderSet.add("Garlic Bread");
+// orderSet.add("Garlic Bread");
+// orderSet.delete("Risotto");
+// console.log(orderSet);
+// // orderSet.clear();
+
+// for (const order of orderSet) {
+// 	console.log(order);
+// }
+
+// //Example
+// const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
+// const staffUnique = [...new Set(staff)];
+// console.log(staffUnique);
+// console.log(
+// 	new Set(["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"]).size
+// );
+// console.log(new Set("jonasschmedtmann").size);
+
+// Maps: Fundamentals
+const rest = new Map();
+rest.set("name", "Classico Italiano");
+rest.set(1, "Firenze, Italy");
+console.log(rest.set(2, "Lisbon, Portugal"));
+
+rest.set("categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"])
+	.set("open", 11)
+	.set("close", 23)
+	.set(true, "We are open :D")
+	.set(false, "We are close :(");
+
+console.log(rest.get("name"));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 8;
+console.log(rest.get(time > rest.get("open") && time < rest.get("close")));
+
+console.log(rest.has("categories"));
+rest.delete(2);
+// rest.clear();
+console.log(rest);
+console.log(rest.size);
+rest.set(document.querySelector("h1"), "Heading");
+
+const arr = [1, 2];
+rest.set(arr, "Test");
+console.log(rest.get(arr));
+
 // // Looping Objects: Object Keys, Values, and Entries
 
 // // Property NAMES
@@ -424,32 +490,32 @@ In this game, it will look like this:
 GOOD LUCK 😀
 */
 
-for (const player of game.scored) {
-	console.log(player);
-}
+// for (const player of game.scored) {
+// 	console.log(player);
+// }
 
-console.log("==============================");
+// console.log("==============================");
 
-const odds = Object.entries(game.odds);
-let x = 0;
-for (const [key, value] of odds) {
-	x += value;
-}
-console.log(x / odds.length);
+// const odds = Object.entries(game.odds);
+// let x = 0;
+// for (const [key, value] of odds) {
+// 	x += value;
+// }
+// console.log(x / odds.length);
 
-console.log("==============================");
+// console.log("==============================");
 
-for (const [key, value] of odds) {
-	const str = key == "x" ? "draw" : `victory ${game[key]}`;
-	console.log(`Odd of ${str}: ${value}`);
-}
+// for (const [key, value] of odds) {
+// 	const str = key == "x" ? "draw" : `victory ${game[key]}`;
+// 	console.log(`Odd of ${str}: ${value}`);
+// }
 
-console.log("==============================");
+// console.log("==============================");
 
-const scorers = {};
-let tmp = 1;
+// const scorers = {};
+// let tmp = 1;
 
-for (const player of game.scored) {
-	scorers[player] ? scorers[player]++ : (scorers[player] = 1);
-}
-console.log(scorers);
+// for (const player of game.scored) {
+// 	scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+// }
+// console.log(scorers);
