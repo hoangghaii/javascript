@@ -57,30 +57,82 @@
 // console.log(jonas);
 
 // Functions Accepting Callback Functions
-const oneWord = function (str) {
-	return str.replace(/ /g, "").toLowerCase();
+// const oneWord = function (str) {
+// 	return str.replace(/ /g, "").toLowerCase();
+// };
+
+// const upperFirstWord = function (str) {
+// 	const [first, ...others] = str.split(" ");
+// 	return [first.toUpperCase(), ...others].join(" ");
+// };
+
+// // Higher-order function
+// const transformer = function (str, fn) {
+// 	console.log(`Original string: ${str}`);
+// 	console.log(`Transformed string: ${fn(str)}`);
+
+// 	console.log(`Transformed by: ${fn.name}`);
+// };
+
+// transformer("JavaScript is the best!", upperFirstWord);
+// transformer("JavaScript is the best!", oneWord);
+
+// // JS uses callbacks all the time
+// const hight5 = function () {
+// 	console.log("👋");
+// };
+
+// document.body.addEventListener("click", hight5);
+// ["Jonas", "Martha", "Adam"].forEach(hight5);
+
+// Functions Returning Functions
+// const greet = function (greeting) {
+// 	return function (name) {
+// 		console.log(`${greeting} ${name}`);
+// 	};
+// };
+
+// const greeterHey = greet("Hey");
+// greeterHey("Jonas");
+// greeterHey("Steven");
+
+// greet("Hello")("Jonas");
+
+// // Challenge
+// const greetArr = (greeting) => (name) => console.log(`${greeting} ${name}`);
+
+// greetArr("Hi")("Jonassss");
+
+// The call and apply Methods
+const lufthansa = {
+	airline: "Lufthansa",
+	iataCode: "LH",
+	bookings: [],
+
+	book(flightNum, name) {
+		console.log(
+			`${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+		);
+		// this.bookings.push({
+		// 	flight: `${this.iataCode}${flightNum}`,
+		// 	name: name,
+		// });
+	},
 };
 
-const upperFirstWord = function (str) {
-	const [first, ...others] = str.split(" ");
-	return [first.toUpperCase(), ...others].join(" ");
+lufthansa.book(239, "Jonas Schmedtmann");
+lufthansa.book(635, "John Smith");
+
+const eurowings = {
+	airline: "Eurowings",
+	iataCode: "EW",
+	booking: [],
 };
 
-// Higher-order function
-const transformer = function (str, fn) {
-	console.log(`Original string: ${str}`);
-	console.log(`Transformed string: ${fn(str)}`);
+const book = lufthansa.book;
 
-	console.log(`Transformed by: ${fn.name}`);
-};
+// Does NOT work
+// book(23, "Sarah Williams");
 
-transformer("JavaScript is the best!", upperFirstWord);
-transformer("JavaScript is the best!", oneWord);
-
-// JS uses callbacks all the time
-const hight5 = function () {
-	console.log("👋");
-};
-
-document.body.addEventListener("click", hight5);
-["Jonas", "Martha", "Adam"].forEach(hight5);
+book.call(eurowings, 23, "Sarah Williams");
+console.log(eurowings);
